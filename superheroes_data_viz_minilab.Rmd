@@ -1,0 +1,133 @@
+---
+title: "Superheroes Data Viz Minilab"
+author: "All present group member names here"
+date: "Due by class time Wednesday, January 20, 2021"
+output: 
+  github_document: 
+    fig_height: 4
+    fig_width: 9
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+This investigation asks you to work with the `heroes` data set, a modified version of the **superhero-set** data on Kaggle (https://www.kaggle.com/claudiodavi/superhero-set). 
+
+# Data and packages
+
+We start with loading the packages we'll use.
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+```
+
+Below we use commands we'll learn about later to read in the data from a csv (comma separated values) file. The last line of the code chunk displays the first few lines of the `heroes` data frame (actually a *tibble*, but more about that later in the term). Note that for convenience, the code below restricts the analysis to heroes weighing less than 500 pounds. 
+
+```{r}
+input_data <- read_csv(file = "data/heroes.csv", 
+                   col_types = cols(
+                     name = col_character(),
+                     gender = col_factor(),
+                     hair_color = col_factor(),
+                     height = col_double(),
+                     publisher = col_factor(),
+                     alignment = col_factor(),
+                     weight = col_double()
+)
+)
+heroes <- input_data %>% 
+  filter(weight < 500)
+heroes
+```
+
+For the most part, the variables should be self-explanatory but note that some heroes are missing values on certain variables and that height is measured in cm and weight is measured in pounds.  
+
+Use this data set to answer the questions that follow. Include code chunks and output and be sure to make observations where requested. Be sure the final version of your code is pushed to the GitHub repository. Let me know if you run into trouble. 
+
+# Questions
+
+1. Start by identifying the number of rows and columns in the data. 
+
+```{r}
+
+```
+
+2. Create a single scatterplot of `weight` (y) by `height` (x) with points colored by `gender`. Overlay this plot with smoothing curves where each curve has a different `linetype` also determined by `gender`. Be sure to turn off the standard error shading.
+
+```{r}
+
+```
+
+
+3. Modify the previous plot so that there is only one `linetype` but instead of circles plotted for each point, manually specify three different shapes for the categories of `gender` using the appropriate command.  That is, do not simply use the default shapes that **gplot2** generates.    
+
+```{r}
+
+```
+
+
+4. Create a scatterplot of `weight` (vertical) versus `height`(horizontal) using faceting by all combinations of `publisher` and `alignment` that occur in the data.
+
+```{r}
+
+```
+
+5. Create a faceted scatterplot of `weight` by `height` faceted by `alignment`. The points should be colored by `alignment` and for each scatterplot, overlay a least squares regression line wih no standard error shading.  
+
+```{r}
+
+```
+
+6. Create a bar chart representing the proportion of superheroes with each possible `hair_color`. If the labels are not legible, try flipping the axes.  What are the three most common hair colors?  
+
+```{r}
+
+```
+
+7. At the end of Section 3.7, the text provides this example using the Diamonds data:
+```{r, eval = FALSE}
+ggplot(data = diamonds) + 
+  stat_summary(
+    mapping = aes(x = cut, y = depth),
+    fun.min = min,
+    fun.max = max,
+    fun = median
+  )
+```
+
+Use this template to show the variability in weights of super heroes by `hair_color`. Readbility of the graph may be helped by interchanging the axes.    
+
+```{r}
+
+```
+
+
+8. Explore the relationship between `publisher` and `alignment` using bar charts with position adjustments. The values on the x-axis should be the categories of `publisher.` Create 3 different bar charts, each using a different "postion" adjustment: "fill", "stack" and "dodge".
+
+```{r}
+
+```
+
+9. Refer to your plots in problem 8. Which plot do you prefer and why? Also, write a one-sentence observation about the relationship between `publisher` and `alignment`. Are the heroes from one publisher more likely to have good heroes?    
+
+```{r}
+
+```
+
+10. When working with scatterplots that have a large amount of overplotting of points, the jitter position adjustment is especially useful. For the quantitative variables in this data set, overplotting is not a serious problem. However, consider the somewhat nonstandard scatterplot of `height` (y) by `hair_color` (x) (a quantitative versus categorical variable). Can you see the overplotting? Fix this using a `postion_jitter()` adjustment in which you use a `width` adjustment. Use your judgment or trial and error to pick the value for `width`. You may need to interchange the axes to make this plot legible.  
+
+```{r}
+
+```
+
+11. Create an interesting new plot that uses several of the techniques we've explored. Say why you like this plot and use it to make an observation about the data.  
+
+
+```{r}
+
+```
