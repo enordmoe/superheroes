@@ -1,7 +1,6 @@
 ---
 title: "Superheroes Data Viz Minilab"
-author: "All present group member names here"
-date: "Due by class time Wednesday, January 20, 2021"
+author: "All participating group member names here"
 output: 
   github_document: 
     fig_height: 4
@@ -51,39 +50,52 @@ Use this data set to answer the questions that follow. Include code chunks and o
 
 # Questions
 
-1. Start by identifying the number of rows and columns in the data. 
+1. Start by identifying the number of rows and columns in the data.  
+
+**Answer:**  
+
 
 ```{r}
 
 ```
 
-2. Create a single scatterplot of `weight` (y) by `height` (x) with points colored by `gender`. Overlay this plot with smoothing curves where each curve has a different `linetype` also determined by `gender`. Be sure to turn off the standard error shading.
+2. Using **ggplot2** graphics, create a single scatterplot of `weight` (y) by `height` (x) with points colored by `gender`. Overlay this plot with smoothing curves where each curve has a different `linetype` also determined by `gender`. Be sure to turn off the standard error shading.  
+
+**Answer:**  
 
 ```{r}
 
 ```
 
 
-3. Modify the previous plot so that there is only one `linetype` but instead of circles plotted for each point, manually specify three different shapes for the categories of `gender` using the appropriate command.  That is, do not simply use the default shapes that **gplot2** generates.    
+3. Modify the previous plot so that there is only one `linetype` but instead of circles plotted for each point, manually specify three different shapes for the categories of `gender` using the appropriate command.  That is, do not simply use the default shapes that **ggplot2** generates.   
+
+**Answer:**  
 
 ```{r}
 
 ```
 
 
-4. Create a scatterplot of `weight` (vertical) versus `height`(horizontal) using faceting by all combinations of `publisher` and `alignment` that occur in the data.
+4. Create a scatterplot of `weight` (vertical) versus `height`(horizontal) using faceting by all combinations of `publisher` and `alignment` that occur in the data.  
+
+**Answer:**  
 
 ```{r}
 
 ```
 
-5. Create a faceted scatterplot of `weight` by `height` faceted by `alignment`. The points should be colored by `alignment` and for each scatterplot, overlay a least squares regression line wih no standard error shading.  
+5. Create a faceted scatterplot of `weight` by `height` faceted by `alignment`. The points should be colored by `alignment` and for each scatterplot, overlay a least squares regression smoothing line with no standard error shading.  
+
+**Answer:**  
 
 ```{r}
 
 ```
 
 6. Create a bar chart representing the proportion of superheroes with each possible `hair_color`. If the labels are not legible, try flipping the axes.  What are the three most common hair colors?  
+
+**Answer:**  
 
 ```{r}
 
@@ -100,26 +112,31 @@ ggplot(data = diamonds) +
   )
 ```
 
-Use this template to show the variability in weights of super heroes by `hair_color`. Readbility of the graph may be helped by interchanging the axes.    
+Use this template to show the variability in weights of super heroes by `hair_color`. Readability of the graph may be helped by interchanging the axes. (Note: Be sure to remove the `eval=FALSE` when you adapt the code chunk for your data.)    
+
+**Answer:**  
 
 ```{r}
 
 ```
 
 
-8. Explore the relationship between `publisher` and `alignment` using bar charts with position adjustments. The values on the x-axis should be the categories of `publisher.` Create 3 different bar charts, each using a different "postion" adjustment: "fill", "stack" and "dodge".
+8. Explore the relationship between `publisher` and `alignment` using bar charts with position adjustments. The values on the x-axis should be the categories of `publisher.` Create 3 different bar charts, each using a different "position" adjustment: "fill", "stack" and "dodge".  
+
+**Answer:**  
 
 ```{r}
 
 ```
 
-9. Refer to your plots in problem 8. Which plot do you prefer and why? Also, write a one-sentence observation about the relationship between `publisher` and `alignment`. Are the heroes from one publisher more likely to have good heroes?    
+9. Refer to your plots in problem 8. Which plot do you prefer and why? Also, write a one-sentence observation about the relationship between `publisher` and `alignment`. Are the heroes from one publisher more likely to be good heroes?    
+**Answer:**  
 
-```{r}
 
-```
 
 10. When working with scatterplots that have a large amount of overplotting of points, the jitter position adjustment is especially useful. For the quantitative variables in this data set, overplotting is not a serious problem. However, consider the somewhat nonstandard scatterplot of `height` (y) by `hair_color` (x) (a quantitative versus categorical variable). Can you see the overplotting? Fix this using a `postion_jitter()` adjustment in which you use a `width` adjustment. Use your judgment or trial and error to pick the value for `width`. You may need to interchange the axes to make this plot legible.  
+
+**Answer:**  
 
 ```{r}
 
@@ -127,6 +144,8 @@ Use this template to show the variability in weights of super heroes by `hair_co
 
 11. Create an interesting new plot that uses several of the techniques we've explored. Say why you like this plot and use it to make an observation about the data.  
 
+
+**Answer:**  
 
 ```{r}
 
